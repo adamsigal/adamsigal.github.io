@@ -74,14 +74,14 @@ a:hover{
 #duck-img{
   float: right;
   /*display: inline-flex;*/
-  width: 70%;
-  height: 70%;
+  width: 135px;
+  height: 135px;
 }
 #adam-img{
   /*float: right;
   display: inline-flex;*/
-  width: 70%;
-  height: 70%;
+  width: 135px;
+  height: 135px;
 }
 #eng{
   text-indent: 0px;
