@@ -1,0 +1,122 @@
+/*Adam Sigal 20036435*/
+body{
+  font-family: helvetica, arial, sans-serif;
+  background-color: #ccefff;
+  text-align: justify;
+}
+header{
+  background-color: #fce5ba;
+  margin-right: 8em;
+  margin-left:  8em;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+footer{
+  margin-right: 8em;
+  margin-left:  8em;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+main{
+    font-size: 120%;
+}
+p{
+  text-indent: 2em;
+}
+h1{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 200%;
+  text-align: center;
+  color: black;
+  line-height: 1.5;
+}
+h2{
+  color: #006793;
+  border-bottom-style: solid;
+  border-width: 3px;
+}
+h3{
+  font-style: italic;
+}
+a:link, a:visited, a:active{
+  text-decoration: none;
+  color: #e28700;
+  font-weight: bold;
+}
+a:hover{
+  text-decoration: none;
+  color: #ffab30;
+  font-weight: bold;
+}
+#intro{
+  padding: 1em 6em 1em 6em;
+  margin-right: 6.7em;
+  margin-left:  6.7em;
+  background-color: white;
+  margin-top: 0px;
+}
+#news{
+  padding: 1em 2em 1em 2em;
+  margin-right: 6.7em;
+  margin-left:  6.7em;
+  background-color: white;
+  margin-top: 0px;
+}
+#udem{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 30%;
+}
+#duck-img{
+  float: right;
+  /*display: inline-flex;*/
+  width: 70%;
+  height: 70%;
+}
+#adam-img{
+  /*float: right;
+  display: inline-flex;*/
+  width: 70%;
+  height: 70%;
+}
+#eng{
+  text-indent: 0px;
+  line-height: 0.1;
+}
+
+.post{
+  border-left-style: solid;
+  border-width: 0.6em;
+  border-color:#006793;
+  padding-left: 1em;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container div{
+  /*border: 1px solid;*/
+  padding: 10px;
+
+}
+.img-div{
+  flex-basis: 15%;
+
+  /*align-self: center;
+  /*width: 10em;
+  height: 10em;*/
+}
+.title-div{
+  flex-basis: 70%;
+  /*text-align: center;
+  flex-grow: 4;
+  flex-basis: 70%;*/
+  align-items: center;
+  font-style: italic;
+}
