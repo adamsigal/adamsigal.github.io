@@ -24,6 +24,12 @@ main{
 p{
   text-indent: 2em;
 }
+b{
+  color: #006793;
+}
+ul{
+  font-weight: bold;
+}
 h1{
   margin-left: auto;
   margin-right: auto;
@@ -39,6 +45,11 @@ h2{
 }
 h3{
   font-style: italic;
+}
+figcaption{
+  text-align: center;
+  font-size: 80%;
+  font-weight: bold;
 }
 a:link, a:visited, a:active{
   text-decoration: none;
@@ -87,6 +98,23 @@ a:hover{
   text-indent: 0px;
   line-height: 0.1;
 }
+#tiles{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 40%;
+}
+#check-fxns{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 90%;
+}
+/* #tiles img{
+  width: 50%;
+} */
 
 .post{
   border-left-style: solid;
