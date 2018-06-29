@@ -118,6 +118,55 @@
 						  donc inclure la fonctionnalité de désactiver les intersection
 						  dans la génération de réseaux.
 					  </p>
+					  <p>
+						  J'ai passé la plupart de mon temps de la deuxième semaine à
+						  programmer l'algorithme de <i>retour-arrière</i> (backtracking),
+						  sur une génération basée sur la <i>fouille en profondeur</i>
+						  (depth-first search). Avant de débuter, j'ai dû décider si je
+						  voulais l'implémenter de façon itérative ou récursive. J'ai donc
+						  fait des recherches sur les points forts et faibles des deux possibilités;
+						  la récursivité engendre du code très lisible et
+						  l'itérativité prévient l'allocation excessive de <i>stack frames</i>.
+						  À la fin, j'ai décidé de le faire itérativement parce que,
+						  en général, ce genre d'implémentation a une meilleure performance
+						  que la récursivité, et en plus, c'est plus simple à programmer.
+						  (Je vais pas trop m'obstiner là-desssus!)
+					  </p>
+					  <p>
+						  Bien sûr, il devient de plus en plus difficile de retracer les
+						  origines des bogues qui apparaissent à la dernière phase de
+						  l'implémentation d'un programme aussi monolithique. Péniblement,
+						  je me lançai sur leurs pistes...
+					  </p>
+					  <p>
+						  Enfin, vendredi, le 29 juin, la génération des réseaux valides
+						  était officiellement fonctionnelle!
+					  </p>
+					  <p>
+						  ...la plupart du temps. Il n'y avait plus d'erreurs, mais environ
+						  30% du temps, la génération ne terminait pas avant plusieurs minutes.
+						  J'avais l'impression que c'était une conséquence de la fouille en profondeur.
+						  J'ai donc théorisé qu'une <i>fouille en largeur</i> (breadth-first search)
+						  pourrait être plus apte à mes fins. Avant d'expliquer les résultats de ma
+						  théorie, laissez-moi expliquer ce qui se passait dans la génération
+						  qui faisait en sorte qu'elle semblait parfois interminable:
+					  </p>
+					  <p>
+						  Lors de la génération, un faux pas précoce se produisait. Pas un
+						  faux pas qui était invalide, mais un choix qui n'avait aucun
+						  choix suivant valide. Cependant, la fouille en profondeur explore
+						  les options d'un enfant jusqu'à la réussite avant de regarder
+						  son frère. Cela fait en sorte que quand les options d'un faux
+						  pas commencent à être explorées, et enfin rejetées, le retour en arrière
+						  se fait sur son frère (là où le dernier ajout au réseau s'est effectué), et
+						  non sur le faux pas. Les différentes dispositions de réseau de la
+						  « branche » non-problématique sont donc explorés <i>ad nauseum</i>,
+						  tandis que la branche problématique est mise en attente.
+					  </p>
+					  <p>
+						  Ce genre problème est très probablement évitable avec une implémentation
+						  basée sur la fouille en largeur. Je vais explorer cette perspective la semaine prochaine.
+					  </p>
 				  </div>
 
 
