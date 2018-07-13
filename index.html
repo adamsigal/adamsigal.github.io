@@ -88,6 +88,78 @@
 		          <h2> Nouvelles </h2>
 
 				  <div class="post">
+	  			  	<h3>
+	  				  	2 juillet - 16 juillet
+	  			  	</h3>
+	  			  	<p>
+	  					J'ai de bonnes nouvelles et de mauvaises nouvelles. La bonne
+	  					nouvelle est que l'implémentation de la fouille en largeur fut
+	  					marquément plus simple que je ne m'attendais. La mauvaise
+	  					est que la fouille en largeur n'était pas le grand sauveur que je
+	  					souhaitais. Il y avait peut-être une légère amélioration, mais
+	  					le problème de la boucle infinie restait toujours. Incapable
+	  					de trouver d'où parvenait ce bogue tenace, je me suis mis à
+	  					la conception d'une solution plus rusée que le bogue.
+	  			  	</p>
+	  				<p>
+	  					En étudiant les résultats des réseaux routiers qui étaient
+	  					en train d'être générés lors des boucles infinis, j'avais remarqué
+	  					qu'ils étaient toujours très proches d'être valides. Il y avait
+	  					souvent une seule petite section de route qui engendrait un
+	  					retour-arrière, même si à part cette petite section, le
+	  					réseau était complètement valide.
+	  				</p>
+	  				<p>
+	  					J'ai donc décidé de limiter le nombre maximal d'itérations
+	  					du processus de génération à 10 000. Sur mon ordinateur ceci
+	  					équivaut à moins d'une seconde d'exécution, mais j'ai trouvé
+	  					que c'était plus que suffisant. Si le processus dépasse 10 000
+	  					itérations, une nouvelle fonction <i>trim()</i> (tailler),
+	  					qui prend le réseau courant, et taille toutes les sections
+	  					de route qui finissent avec un bout de route <i>de degré 1</i>.
+	  					Comme ça, le réseau final sera nécessairement un graphe orienté cyclique,
+	  					comme spécifié par les règles de Duckietown.
+	  				</p>
+	  				<p>
+	  					Après l'implémentation de cette fonction, un réseau
+	  					valide était généré à chaque fois! Maintenant il fallait permettre
+	  					à l'utilisateur de spécifier quel type de réseau il voulait.
+	  					Pour le réseau lui-même, il n'y a que 3 spécifications possible:
+	  					la largeur, la hauteur et la densité. Évidemment, la densité était
+	  					le plus intéressant à faire. Pour y arriver, j'ai conçu une
+	  					équation mathématique qui calculait le nombre maximal d'arcs
+	  					dans un graphe en fonction de sa hauteur et de sa largeur. Ensuite,
+	  					le nombre total d'arcs dans le graphe actuel est calculé et finalement,
+	  					un pourcentage de couverture est calculé. Ce pourcentage est utilisé
+	  					pour classer un réseau donné en trois catégories: <i>"épars",
+	  					"moyen" ou "dense"</i>. C'était bien, mais j'ai vite remarqué
+	  					que le rapport entre le pourcentage de couverture et les
+	  					dimensions du réseau n'étaient pas linéaires. Il fallait donc que
+	  					je trouve un autre moyen de déterminer la densité. Or, puisque
+	  					tout était fonctionnel autrement, j'ai décidé de passer à la prochaine
+	  					étape: la conversion du réseau et la sortie sous format .yaml.
+	  				</p>
+	  				<p>
+	  					La conversion était facile; je n'avais qu'à créer un dictionnaire
+	  					disant ce que chaque configuration de noeud représente (il y en
+	  					a 16). Pas mal direct, je ne me plains pas! La sortie yaml
+	  					était aussi pas trop ardue, puisque j'avais déjà fait la plupart
+	  					du travail avant de commencer mon travail sur la génération.
+	  				</p>
+	  				<p>
+	  					Me sentant accompli, j'entamai mon travail sur le placement
+	  					aléatoire d'objets. J'étais excessivement heureux d'avoir enfin
+	  					passé à autre chose. Vous allez en entendre davantage dans le prochain
+	  					post!
+	  				</p>
+
+	  		  	</div>
+
+
+	  <!--=========================================================================-->
+
+
+				  <div class="post">
 					  <h3>
 						  18 juin - 2 juillet
 					  </h3>
