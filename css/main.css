@@ -27,7 +27,7 @@ p{
 b{
   color: #006793;
 }
-ul{
+#boldlist li{
   font-weight: bold;
 }
 h1{
