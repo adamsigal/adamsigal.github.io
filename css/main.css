@@ -56,6 +56,13 @@ a:link, a:visited, a:active{
   color: #e28700;
   font-weight: bold;
 }
+li, dl{
+    font-weight: normal;
+    font-size: 80%;
+}
+dt{
+    font-weight: bold;
+}
 a:hover{
   text-decoration: none;
   color: #ffab30;
