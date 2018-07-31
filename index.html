@@ -165,6 +165,76 @@
 
 				  <div class="post">
 	  			  	<h3>
+	  				  	16 juillet - 30 juillet
+	  			  	</h3>
+
+					<p>
+						C'était deux semaines remplies d'heuristique. J'ai appris que
+						créer une petite ville de caneton prend beaucoup de décisions
+						subconscientes qui sont quelque peu fatigants à décrire
+						à une machine. Mais je l'ai fait!
+					</p>
+					<p>
+						Donc, la génération d'objets et fait, et voici comment ça marche:
+					</p>
+					<p>
+						Pour commencer, une densité d'objets est spécifiée ainsi que
+						si les objets sur la route sont permis. Cela détermine combien de
+						tuiles dans la grille de la carte peuvent contenir des objets, et
+						à partir de ça le nombre d'objets qu'il y aura est calculé.
+					</p>
+					<p>
+						Ensuite, pour chaque intersection, les bons panneaux routiers
+						sont placés automatiquement selon les spécifications d'apparence
+						de Duckietown. C'était difficile de trouver comment faire cela
+						correctement puisque chaque disposition d'intersection (N, S, E, O)
+						se ressemble beaucoup et il est facile de confondre les panneaux
+						et leurs coordonnées.
+					</p>
+					<p>
+						Ensuite, une coordonnée aléatoire est générée, et, si
+						elle correspond à une tuile valide, la fonction
+						<i>place_object()</i> est appelée. Cette fonction génère
+						une coordonnée à l'intérieur de la tuile où elle va essayer de
+						placer un des objets qui sont permis sur ce type de tuile.
+						Elle va aussi faire des modifications à la disposition de l'objet
+						et à son emplacement. Par exemple si un objet chevauche une
+						route voisine, il sera reculé pour débloquer le chemin. Mais
+						si, par exemple, il y a une collision entre le nouvel objet et un
+						objet déjà placé, cet objet ne sera pas placé, et le
+						programme va générer une nouvelle coordonnée et un nouvel objet.
+						L'évasion de collision est gérée par la fonction
+						<i>allowed()</i>. Elle va décider si un objet peut être placé
+						à un emplacement spécifié selon le type d'objet, le type de
+						tuile et les objets qui y sont déjà. Chaque objet a un rayon
+						unique à lui, et si les rayons d'un nouvel objet chevauche un
+						rayon préexistant, l'objet ne pourra pas être placé. S'il y a
+						aucun chevauchement, l'objet sera ajouté à la liste d'objets
+						qui seront, à la fin, écrits au fichier <i>output.yaml</i>.
+					</p>
+					<p>
+						Après, il fallait intégrer ce programme au générateur de réseaux routier
+						et le programme gérant qui fait l'écriture. Ce n'était pas sans
+						difficulté, mais en fin de compte cela m'a pris environ une journée.
+						J'avais trouvé plusieurs bogues en chemin, et il fallait modifier
+						l'interface de ligne de commandes, puisqu'il y avait deux nouveaux
+						paramètres à ajouter, mais finalement, le 30 juillet, <i>le
+						projet sur lequel je travaillais depuis des mois fonctionnait
+						complètement!</i>
+					</p>
+					<p>
+						Malheureusement, j'étais deux semaines en retard, donc je vais devoir travailler vite sur 
+						les modifications que vont demander mes supérieurs et la documentation que je vais
+						devoir ajouter au livre officiel de Duckietown. Même à ça, je suis fier d'avoir réussi!
+					</p>
+	  		  	</div>
+
+
+	  <!--=========================================================================-->
+
+
+				  <div class="post">
+	  			  	<h3>
 	  				  	2 juillet - 16 juillet
 	  			  	</h3>
 	  			  	<p>
