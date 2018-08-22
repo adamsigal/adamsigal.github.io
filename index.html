@@ -157,11 +157,79 @@
 					<br />
 					<dt>16 juillet - 30 juillet</dt>
 					<dd>- Révisions</dd>
+					<br />
+					<dt>1 août - 31 août</dt>
+					<dd>- Tâches supplémentaires / petits projets additionnels</dd>
 				  </dl>
 		        </div>
 
 				<div id="news">
 		          <h2>D. Nouvelles </h2>
+
+				  <div class="post">
+					<h3>
+						31 juillet - 13 août
+					</h3>
+
+					<p>
+						Ces deux semaines ont été consacrées à travailler la robustesse du programme
+						et d'y ajouter plus d'options de génération. Pendant ce temps
+						j'ai écrit les versions 2.0 et 3.0 du générateur.
+					</p>
+					<p>
+						D'abord, j'ai fait le travail de fusionner le fichier de la génération
+						de réseau routier et le fichier de la génération d'objets, ainsi
+						que le système de contrôle. Cela s'est assez bien déroulé.
+						Mes supérieurs m'ont dit qu'avoir un seul fichier était préférable parce que
+						le cas d'utilisation le plus commun de mon programme était
+						de générer un réseau pour ensuite le peupler avec des objets puis
+						de créer un fichier .yaml en sortie. C'était juste, mais ça
+						voulait dire que mon programme, désormais unifié, avait besoin de
+						plus d'options de génération.
+					</p>
+					<p>
+						Le plus évident était bien sûr de pouvoir générer un réseau sans le
+						peupler avec des objets. Donc j'ai fait ça. Ce qui suivait logiquement
+						était de passer un fichier .yaml spécifiant un réseau routier en
+						entrée sur lequel placer des objets aléatoirement. Cela fut plus ardu.
+						Il fallait que j'apprenne davantage sur la gestion de fichiers,
+						que je crée une méthode qui vérifie la bonne utilisation du
+						format <i>map</i> de Duckietown et qui modifie le fonctionnement
+						de l'interface de la ligne de commandes. J'ai fait cette modification
+						parce que des paramètres
+						qui étaient obligatoires pour générer un réseau routier ne
+						l'étaient plus, puisque nous avons l'option d'en passer un en
+						entrée.
+					</p>
+					<p>
+						Mes supérieurs m'ont aussi demandé de séparer le paramètre de
+						densité en deux; un pour les objets sur la route et un pour ceux dans les tuiles
+						avoisinantes. En tant que bon stagiaire, c'est ça que j'ai fait!
+					</p>
+					<p>
+						Une autre suggestion qu'ils ont eue était de faire varier les
+						tailles des <i>duckies</i> dans le simulateur. En ce faisant,
+						j'ai remarqué que les canetons étaient nettement plus grands dans
+						le simulateur qu'ils ne le sont dans la vraie vie. J'ai donc changé
+						leur taille par défaut et, dans le générateur, j'ai fait varier
+						leurs tailles suivant une loi normale centré sur 0.04 longueur de tuile.
+					</p>
+					<p>
+						Finalement, puisque nous avons remarqué que des objets dans certaines
+						positions menaient à un réseau difficile à naviguer, j'ai instauré
+						des niveaux de difficulté. La difficulté par défaut interdit
+						des objets sur des tuiles avoisinantes d'une intersection, et
+						aussi sur les courbes ayant un objet dessus.
+					</p>
+					<p>
+						Lors de mes deux dernières semaines, je vais travailler sur mon
+						rapport de projet et sur des tâches supplémentaires basées sur mon
+						travail principal.
+					</p>
+				</div>
+
+
+		<!--=========================================================================-->
 
 				  <div class="post">
 	  			  	<h3>
@@ -223,7 +291,7 @@
 						complètement!</i>
 					</p>
 					<p>
-						Malheureusement, j'étais deux semaines en retard, donc je vais devoir travailler vite sur 
+						Malheureusement, j'étais deux semaines en retard, donc je vais devoir travailler vite sur
 						les modifications que vont demander mes supérieurs et la documentation que je vais
 						devoir ajouter au livre officiel de Duckietown. Même à ça, je suis fier d'avoir réussi!
 					</p>
