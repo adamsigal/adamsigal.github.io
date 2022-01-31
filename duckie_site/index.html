@@ -1,0 +1,651 @@
+<!-- Adam Sigal 20036435 -->
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title> Adam Sigal IFT3150 </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+
+	<body>
+		<div id="page">
+			<header>
+        <img src="./1280px-Universite_de_Montreal_logo.svg.png" id="udem" alt="UdeM">
+        <div class="container">
+          <div class="img-div">
+            <img src="./duckie_logo_circle.png" id="duck-img" alt="Duckie">
+          </div>
+          <div class"title-div">
+    				<h1> Adam Sigal <br> Projet de recherche d'été (IFT 3150) avec Duckietown </h1>
+          </div>
+          <div class="img-div">
+            <img src="./adam_headshot.png" id="adam-img" alt="Adam">
+          </div>
+        </div>
+      </header>
+
+
+			<main>
+				<div id="intro">
+		          <br>
+		          <p id="eng"> <small> <a href="stage_en.html">See this description in English</a> </small> </p>
+
+		  		  <h2 class="header-intro">A. Duckietown</h2>
+
+				  <p class="para-intro">
+					  <i>Duckietown</i> (<a href="http://www.duckietown.org">duckietown.org</a>)
+					  est un effort de robotique, de recherche et de vulgarisation. Le but
+					  ambitieux est de créer la plateforme d’autonomie la plus largement
+					  disponible au monde, initialement conçue par nous, mais finalement
+					  adoptée et maintenue par la communauté en entier, possiblement avec
+					  le soutien continu d’une institution particulière pour l’administration.
+					  Nous avons minutieusement considéré l’équilibre des ressources du projet
+					  afin d’assurer son éventuelle indépendance, au-delà de notre période de
+					  financement. S’il est une réussite, nous allons améliorer l’expérience
+					  scolaire de tous les étudiants de la robotique dans le monde. Nous allons
+					  aussi permettre aux professeurs de gagner le temps qu’ils auraient perdu
+					  en créant et en maintenant des expériences d’enseignement engageantes
+					  eux-mêmes. Si, au lieu de développer un tel cours à partir de rien,
+					   ils peuvent maintenant utiliser notre <i>« cours prêt à emporter » </i>,
+					   ensuite ensuite chaque professeur peut allouer plus de ressources
+					   (intellectuelles / temporelles  / monétaires) à la recherche.
+					   Elle est aussi une plateforme qui peut être utilisée dans la
+					   recherche moderne comme : la mobilité sur demande, l’apprentissage
+					   machine / l’apprentissage profond / l’apprentissage de renforcement,
+					   les contraintes de ressources, la vision par ordinateur et bien d’autres.
+					   Au présent, la plateforme a été utilisée <i> officiellement </i> au MIT
+					   comme un cours de deuxième cycle en 2016, et par la suite à l’Université de Montréal,
+					   le Toyota Technical Institute of Chicago (TTIC) et ETH Zürich comme un cours de deuxième
+					   cycle en 2017. Elle est aussi utilisée <i> officieusement </i> par
+					   bien d’autres institutions à de différents niveaux
+					   (regarder <a href="http://www.duckietown.org">duckietown.org</a> pour voir la liste actuelle).
+				  </p>
+
+				  <h2 class="header-intro">B. Les <i> AI Driving Olympics</i> (AIDO) et les buts de mon projet</h2>
+
+				  <p class="para-intro">
+					  Actuellement, le projet est dans un état qui est trop complexe et donc
+					  trop inaccessible pour bien des gens. Un ordinateur utilisant GNU/Linux
+					  est requiert et il y a plusieurs détails de configuration nécessaires.
+					  L’objectif de mon projet étudiant est d’apprendre les détails du
+					  fonctionnement du robot (et par conséquent les véhicules autonomes)
+					  puis d’appliquer le génie logiciel et des techniques spécifiques à
+					  la robotique pour rendre la plateforme plus accessible et robuste.
+					  Le projet sera utilisé dans une <i> compétition réelle </i> au prestigieux <i>
+						  Neural Information Processing Symposium </i> (NIPS) en 2018
+						  (nous appelons cette compétition les <i> AI Driving Olympics</i>).
+						  Il y aura plusieurs défis que les participants essaieront. Cela
+						  impliquera plusieurs étudiants à travers le monde qui téléchargent
+						  le code et qui testent de nouveaux algorithmes. Les équipes avec les meilleurs
+						  algorithmes seront invitées à participer à la compétition réelle.
+						  Mon projet aidera à jeter les bases des AI Driving Olympics.
+
+					<br />
+					<br />
+
+		            Je fais mon stage au sein de l'équipe derrière le simulateur de Duckietown.
+					Ce simulateur est basé sur OpenAI Gym et a été écrit principalement par
+					<a href="https://github.com/maximecb">Maxime Chevalier-Boisvert</a>.
+					Chaque <i>ville</i> est chargée dans le simulateur à partir un fichier
+					<i>.yaml</i> sous un format <i>map</i>; une spécification aussi créée par
+					Maxime Chevalier-Boisvert. La tâche principale de mon stage est
+					d'écrire en Python un programme qui génère des fichiers sous le format <i>map</i>
+					de façon aléatoire. Ces fichiers doivent contenir des réseaux routiers qui
+					conforment aux <a href="https://docs.duckietown.org/opmanual_duckietown/out/duckietown_specs.html">spécifications d'apparence de Duckietown</a>
+					et doivent être populés d'objets choisis parmi <a href="https://github.com/duckietown/gym-duckietown#map-file-format">les objets présents dans le simulateur</a>. L'intéraction avec le logiciel sera faite avec une interface de ligne de commandes où l'utilisateur
+					pourra spécifier le type de <i>map</i> qu'il veut. Par exemple il pourrait spécifier qu'un <i>map</i> n'ait aucun objet sur la rue et qu'il n'y ait
+					aucune intersection. La liste complète des spécifications sera disponible dans le <a href="https://github.com/duckietown/map-utils#usage">README</a> sur GitHub.
+
+					<br />
+					<br />
+
+					La conception et la programmation de ce programme comportera plusieurs phases:
+
+					<ul>
+						<li>
+							Aprentissage du contexte de mon travail (format map, OpenAI GYM)
+						</li>
+						<li>
+							Planification de la structure du programme
+						</li>
+						<li>
+							Recherche sur la meilleure manière d'implémenter le générateur de réseau
+						</li>
+						<li>
+							Son implémentation
+						</li>
+						<li>
+							Conception du générateur d'objets
+						</li>
+						<li>
+							Son implémentation
+						</li>
+						<li>
+							Programmation du générateur du fichier de sortie .yaml
+						</li>
+						<li>
+							Révisions
+						</li>
+					</ul>
+
+
+					Le simulateur est une plateforme virtuelle sur laquelle les algorithmes
+					des concurrents des AIDO s'entraîneront avant d'être transférés aux
+					<i>duckiebots</i> physiques. Il faut donc qu'ils aient le plus de variation
+					que possible de leur environnement afin d'être assez robustes pour faire la transition à la vie réelle.
+		          </p>
+
+
+				  <h2 class="header-intro">C. Plan de développement</h2>
+				  <strong>Période du stage: </strong> 18 mai 2018 - 31 août 2018
+				  <br />
+				  <dl>
+					<dt>18 mai - 4 juin</dt>
+					<dd>- Apprentissage du domaine</dd>
+					<dd>- Planification de la structure du programme</dd>
+					<dd>- Recherche sur la meilleure manière d'implémenter le générateur de réseau</dd>
+					<br />
+					<dt>4 juin - 25 juin</dt>
+					<dd>- Implémentation du générateur de réseau</dd>
+					<br />
+					<dt>25 juin - 9 juillet</dt>
+					<dd>- Conception du générateur d'objets</dd>
+					<dd>- Son implémentation</dd>
+					<br />
+					<dt>9 juillet - 16 juillet</dt>
+					<dd>- Programmation du générateur de fichier de sortie .yaml</dd>
+					<br />
+					<dt>16 juillet - 30 juillet</dt>
+					<dd>- Révisions</dd>
+					<br />
+					<dt>1 août - 31 août</dt>
+					<dd>- Tâches supplémentaires / petits projets additionnels</dd>
+				  </dl>
+		        </div>
+
+				<div id="news">
+		          <h2>D. Nouvelles </h2>
+
+				  <div class="post">
+				   <h3>
+					   13 août - 31 août
+				   </h3>
+
+				   <p>
+					   L'avant-dernière semaine a été consacrée à un projet satellite que
+					   m'a demandé Liam Paull. Il s'agit d'une plateforme de navigation
+					   applicable aux réseaux générés par le générateur. Son fonctionnement
+					   est expliqué en détail dans le rapport final du projet.
+					   En termes simples, il prend en paramètre le fichier contenant
+					   la matrice d'adjacence, un point de départ et un point d'arrivée, et il
+					   donne en sortie un fichier .yaml représentant le chemin emprunté.
+				   </p>
+				   <p>
+					Pour calculer le chemin le plus court, un algorithme de recherche
+					de chemin doit être implanté. Le but de ce programme est de donner une
+					plateforme aux utilisateurs de faire cela, donc par défaut il n'y a
+					pas d'algorithme présent.
+				   </p>
+				   <p>
+					Les résultats de ce programme peuvent être vus dans le rapport final du projet.
+				   </p>
+				   <p>
+					Il y a peu de nouvelles sur la denière semaine, puisque je l'ai utilisée
+					pour écrire le rapport final.
+				   </p>
+				   <br />
+				   <p>
+					Et c'est tout pour mon projet de recherche d'été! J'aimerais remercier
+					IVADO de m'avoir gracieusement accordé la Bourse de stage de recherche
+					au premier cycle. J'aimerais aussi remercier Liam Paull ainsi que tous les
+					autres membres de l'équipe de Duckietown. Ce fut une expérience très positive et
+					éducative pour moi et ça m'a donné envie de poursuivre mon parcours scolaire
+					jusqu'au deuxième cycle pour pouvoir continuer de travailler sur de projets
+					aussi intéressants et importants que celui-là.
+				   </p>
+			   </div>
+
+
+	   <!--=========================================================================-->
+
+				  <div class="post">
+					<h3>
+						31 juillet - 13 août
+					</h3>
+
+					<p>
+						Ces deux semaines ont été consacrées à travailler la robustesse du programme
+						et d'y ajouter plus d'options de génération. Pendant ce temps
+						j'ai écrit les versions 2.0 et 3.0 du générateur.
+					</p>
+					<p>
+						D'abord, j'ai fait le travail de fusionner le fichier de la génération
+						de réseau routier et le fichier de la génération d'objets, ainsi
+						que le système de contrôle. Cela s'est assez bien déroulé.
+						Mes supérieurs m'ont dit qu'avoir un seul fichier était préférable parce que
+						le cas d'utilisation le plus commun de mon programme était
+						de générer un réseau pour ensuite le peupler avec des objets puis
+						de créer un fichier .yaml en sortie. C'était juste, mais ça
+						voulait dire que mon programme, désormais unifié, avait besoin de
+						plus d'options de génération.
+					</p>
+					<p>
+						Le plus évident était bien sûr de pouvoir générer un réseau sans le
+						peupler avec des objets. Donc j'ai fait ça. Ce qui suivait logiquement
+						était de passer un fichier .yaml spécifiant un réseau routier en
+						entrée sur lequel placer des objets aléatoirement. Cela fut plus ardu.
+						Il fallait que j'apprenne davantage sur la gestion de fichiers,
+						que je crée une méthode qui vérifie la bonne utilisation du
+						format <i>map</i> de Duckietown et qui modifie le fonctionnement
+						de l'interface de la ligne de commandes. J'ai fait cette modification
+						parce que des paramètres
+						qui étaient obligatoires pour générer un réseau routier ne
+						l'étaient plus, puisque nous avons l'option d'en passer un en
+						entrée.
+					</p>
+					<p>
+						Mes supérieurs m'ont aussi demandé de séparer le paramètre de
+						densité en deux; un pour les objets sur la route et un pour ceux dans les tuiles
+						avoisinantes. En tant que bon stagiaire, c'est ça que j'ai fait!
+					</p>
+					<p>
+						Une autre suggestion qu'ils ont eue était de faire varier les
+						tailles des <i>duckies</i> dans le simulateur. En ce faisant,
+						j'ai remarqué que les canetons étaient nettement plus grands dans
+						le simulateur qu'ils ne le sont dans la vraie vie. J'ai donc changé
+						leur taille par défaut et, dans le générateur, j'ai fait varier
+						leurs tailles suivant une loi normale centré sur 0.04 longueur de tuile.
+					</p>
+					<p>
+						Finalement, puisque nous avons remarqué que des objets dans certaines
+						positions menaient à un réseau difficile à naviguer, j'ai instauré
+						des niveaux de difficulté. La difficulté par défaut interdit
+						des objets sur des tuiles avoisinantes d'une intersection, et
+						aussi sur les courbes ayant un objet dessus.
+					</p>
+					<p>
+						Lors de mes deux dernières semaines, je vais travailler sur mon
+						rapport de projet et sur des tâches supplémentaires basées sur mon
+						travail principal.
+					</p>
+				</div>
+
+
+		<!--=========================================================================-->
+
+				  <div class="post">
+	  			  	<h3>
+	  				  	16 juillet - 30 juillet
+	  			  	</h3>
+
+					<p>
+						C'était deux semaines remplies d'heuristique. J'ai appris que
+						créer une petite ville de caneton prend beaucoup de décisions
+						subconscientes qui sont quelque peu fatigants à décrire
+						à une machine. Mais je l'ai fait!
+					</p>
+					<p>
+						Donc, la génération d'objets et fait, et voici comment ça marche:
+					</p>
+					<p>
+						Pour commencer, une densité d'objets est spécifiée ainsi que
+						si les objets sur la route sont permis. Cela détermine combien de
+						tuiles dans la grille de la carte peuvent contenir des objets, et
+						à partir de ça le nombre d'objets qu'il y aura est calculé.
+					</p>
+					<p>
+						Ensuite, pour chaque intersection, les bons panneaux routiers
+						sont placés automatiquement selon les spécifications d'apparence
+						de Duckietown. C'était difficile de trouver comment faire cela
+						correctement puisque chaque disposition d'intersection (N, S, E, O)
+						se ressemble beaucoup et il est facile de confondre les panneaux
+						et leurs coordonnées.
+					</p>
+					<p>
+						Ensuite, une coordonnée aléatoire est générée, et, si
+						elle correspond à une tuile valide, la fonction
+						<i>place_object()</i> est appelée. Cette fonction génère
+						une coordonnée à l'intérieur de la tuile où elle va essayer de
+						placer un des objets qui sont permis sur ce type de tuile.
+						Elle va aussi faire des modifications à la disposition de l'objet
+						et à son emplacement. Par exemple si un objet chevauche une
+						route voisine, il sera reculé pour débloquer le chemin. Mais
+						si, par exemple, il y a une collision entre le nouvel objet et un
+						objet déjà placé, cet objet ne sera pas placé, et le
+						programme va générer une nouvelle coordonnée et un nouvel objet.
+						L'évasion de collision est gérée par la fonction
+						<i>allowed()</i>. Elle va décider si un objet peut être placé
+						à un emplacement spécifié selon le type d'objet, le type de
+						tuile et les objets qui y sont déjà. Chaque objet a un rayon
+						unique à lui, et si les rayons d'un nouvel objet chevauche un
+						rayon préexistant, l'objet ne pourra pas être placé. S'il y a
+						aucun chevauchement, l'objet sera ajouté à la liste d'objets
+						qui seront, à la fin, écrits au fichier <i>output.yaml</i>.
+					</p>
+					<p>
+						Après, il fallait intégrer ce programme au générateur de réseaux routier
+						et le programme gérant qui fait l'écriture. Ce n'était pas sans
+						difficulté, mais en fin de compte cela m'a pris environ une journée.
+						J'avais trouvé plusieurs bogues en chemin, et il fallait modifier
+						l'interface de ligne de commandes, puisqu'il y avait deux nouveaux
+						paramètres à ajouter, mais finalement, le 30 juillet, <i>le
+						projet sur lequel je travaillais depuis des mois fonctionnait
+						complètement!</i>
+					</p>
+					<p>
+						Malheureusement, j'étais deux semaines en retard, donc je vais devoir travailler vite sur
+						les modifications que vont demander mes supérieurs et la documentation que je vais
+						devoir ajouter au livre officiel de Duckietown. Même à ça, je suis fier d'avoir réussi!
+					</p>
+	  		  	</div>
+
+
+	  <!--=========================================================================-->
+
+
+				  <div class="post">
+	  			  	<h3>
+	  				  	2 juillet - 16 juillet
+	  			  	</h3>
+	  			  	<p>
+	  					J'ai de bonnes nouvelles et de mauvaises nouvelles. La bonne
+	  					nouvelle est que l'implémentation de la fouille en largeur fut
+	  					marquément plus simple que je ne m'attendais. La mauvaise
+	  					est que la fouille en largeur n'était pas le grand sauveur que je
+	  					souhaitais. Il y avait peut-être une légère amélioration, mais
+	  					le problème de la boucle infinie restait toujours. Incapable
+	  					de trouver d'où provenait ce bogue tenace, je me suis mis à
+	  					la conception d'une solution plus rusée que le bogue.
+	  			  	</p>
+	  				<p>
+	  					En étudiant les résultats des réseaux routiers qui étaient
+	  					en train d'être générés lors des boucles infinis, j'avais remarqué
+	  					qu'ils étaient toujours très proches d'être valides. Il y avait
+	  					souvent une seule petite section de route qui engendrait un
+	  					retour-arrière, même si à part cette petite section, le
+	  					réseau était complètement valide.
+	  				</p>
+	  				<p>
+	  					J'ai donc décidé de limiter le nombre maximal d'itérations
+	  					du processus de génération à 10 000. Sur mon ordinateur ceci
+	  					équivaut à moins d'une seconde d'exécution, mais j'ai trouvé
+	  					que c'était plus que suffisant. Si le processus dépasse 10 000
+	  					itérations, une nouvelle fonction <i>trim()</i> (tailler),
+	  					qui prend le réseau courant, et taille toutes les sections
+	  					de route qui finissent avec un bout de route <i>de degré 1</i>.
+	  					Comme ça, le réseau final sera nécessairement un graphe orienté cyclique,
+	  					comme spécifié par les règles de Duckietown.
+	  				</p>
+	  				<p>
+	  					Après l'implémentation de cette fonction, un réseau
+	  					valide était généré à chaque fois! Maintenant il fallait permettre
+	  					à l'utilisateur de spécifier quel type de réseau il voulait.
+	  					Pour le réseau lui-même, il n'y a que 3 spécifications possible:
+	  					la largeur, la hauteur et la densité. Évidemment, la densité était
+	  					le plus intéressant à faire. Pour y arriver, j'ai conçu une
+	  					équation mathématique qui calculait le nombre maximal d'arcs
+	  					dans un graphe en fonction de sa hauteur et de sa largeur. Ensuite,
+	  					le nombre total d'arcs dans le graphe actuel est calculé et finalement,
+	  					un pourcentage de couverture est calculé. Ce pourcentage est utilisé
+	  					pour classer un réseau donné en trois catégories: <i>"épars",
+	  					"moyen" ou "dense"</i>. C'était bien, mais j'ai vite remarqué
+	  					que le rapport entre le pourcentage de couverture et les
+	  					dimensions du réseau n'étaient pas linéaires. Il fallait donc que
+	  					je trouve un autre moyen de déterminer la densité. Or, puisque
+	  					tout était fonctionnel autrement, j'ai décidé de passer à la prochaine
+	  					étape: la conversion du réseau et la sortie sous format .yaml.
+	  				</p>
+	  				<p>
+	  					La conversion était facile; je n'avais qu'à créer un dictionnaire
+	  					disant ce que chaque configuration de noeud représente (il y en
+	  					a 16). Pas mal direct, je ne me plains pas! La sortie yaml
+						était aussi pas trop ardue, puisque j'avais déjà fait la plupart
+						du travail avant de commencer mon travail sur la génération.
+						J'ai donc tout téléversé au GitHub de Duckietown dans un sous-répositoire
+						appelé <a href="https://github.com/duckietown/map-utils"> map-utils</a>.
+	  				</p>
+	  				<p>
+	  					Heureux d'avoir réussi, j'entamai mon travail sur le placement
+	  					aléatoire d'objets. J'étais excessivement heureux d'avoir enfin
+	  					passé à autre chose. Vous allez en entendre davantage dans le prochain
+	  					post!
+	  				</p>
+
+	  		  	</div>
+
+
+	  <!--=========================================================================-->
+
+
+				  <div class="post">
+					  <h3>
+						  18 juin - 2 juillet
+					  </h3>
+					  <p>
+						  La réécriture finale de la logique des fonctions de vérification
+						  était longue, mais le résultat fut élégant. Après avoir enfin
+						  réussi à implémenter la fonction <i>check_straight()</i>, j'ai
+						  remarqué que je pouvais m'en servir pour les fonctions
+						  <i>check_3way()</i> et <i>check_4way()</i> pour les intersections.
+						  Cela m'a fait gagner du temps et a rendu mon code plus lisible
+						  qu'il n'aurait pu être. Cependant, le code de <i>check_straight()</i>,
+						  quoique fonctionnel, n'était pas élégant. En certaines parties,
+						  il y a 5 niveaux de conditions. Une telle profondeur va à l'encontre
+						  des meilleures pratiques de la programmation, qui disent qu'il
+						  est mieux de ne pas dépasser 3 niveaux de conditions. Pourtant,
+						  je ne voyais pas d'autre manière de formuler les règles nécessaires.
+						  J'ai donc demandé à mon directeur de recherche, Liam Paull, son
+						  opinion. Il m'a dit que tant que le code est fonctionnel, je
+						  devrais poursuivre, et qu'à la complétion du programme, nous
+						  allons réviser le code ensemble pour trouver comment nous pouvons
+						  l'améliorer.
+					  </p>
+					  <p>
+						  Plus tard dans la semaine, ma collègue, Maxime Chevalier-Boisvert, m'a
+						  informé que dans le simulateur dans lequel les algortimes
+						  sont entrainés, les réseaux routiers sont limités à des circuits
+						  fermés. C'est-à-dire des reseaux sans intersection. Je compte
+						  donc inclure la fonctionnalité de désactiver les intersection
+						  dans la génération de réseaux.
+					  </p>
+					  <p>
+						  J'ai passé la plupart de mon temps de la deuxième semaine à
+						  programmer l'algorithme de <i>retour-arrière</i> (backtracking),
+						  sur une génération basée sur la <i>fouille en profondeur</i>
+						  (depth-first search). Avant de débuter, j'ai dû décider si je
+						  voulais l'implémenter de façon itérative ou récursive. J'ai donc
+						  fait des recherches sur les points forts et faibles des deux possibilités;
+						  la récursivité engendre du code très lisible et
+						  l'itérativité prévient l'allocation excessive de <i>stack frames</i>.
+						  À la fin, j'ai décidé de le faire itérativement parce que,
+						  en général, ce genre d'implémentation a une meilleure performance
+						  que la récursivité, et en plus, c'est plus simple à programmer.
+						  (Je vais pas trop m'obstiner là-desssus!)
+					  </p>
+					  <p>
+						  Bien sûr, il devient de plus en plus difficile de retracer les
+						  origines des bogues qui apparaissent à la dernière phase de
+						  l'implémentation d'un programme aussi monolithique. Péniblement,
+						  je me lançai sur leurs pistes...
+					  </p>
+					  <p>
+						  Enfin, vendredi, le 29 juin, la génération des réseaux valides
+						  était officiellement fonctionnelle!
+					  </p>
+					  <p>
+						  ...la plupart du temps. Il n'y avait plus d'erreurs, mais environ
+						  30% du temps, la génération ne terminait pas avant plusieurs minutes.
+						  J'avais l'impression que c'était une conséquence de la fouille en profondeur.
+						  J'ai donc théorisé qu'une <i>fouille en largeur</i> (breadth-first search)
+						  pourrait être plus apte à mes fins. Avant d'expliquer les résultats de ma
+						  théorie, laissez-moi expliquer ce qui se passait dans la génération
+						  qui faisait en sorte qu'elle semblait parfois interminable:
+					  </p>
+					  <p>
+						  Lors de la génération, un faux pas précoce se produisait. Pas un
+						  faux pas qui était invalide, mais un choix qui n'avait aucun
+						  choix suivant valide. Cependant, la fouille en profondeur explore
+						  les options d'un enfant jusqu'à la réussite avant de regarder
+						  son frère. Cela fait en sorte que quand les options d'un faux
+						  pas commencent à être explorées, et enfin rejetées, le retour en arrière
+						  se fait sur son frère (là où le dernier ajout au réseau s'est effectué), et
+						  non sur le faux pas. Les différentes dispositions de réseau de la
+						  « branche » non-problématique sont donc explorés <i>ad nauseum</i>,
+						  tandis que la branche problématique est mise en attente.
+					  </p>
+					  <p>
+						  Ce genre problème est très probablement évitable avec une implémentation
+						  basée sur la fouille en largeur. Je vais explorer cette perspective la semaine prochaine.
+					  </p>
+				  </div>
+
+
+		<!--=========================================================================-->
+
+							<div class="post">
+								<h3>
+									5 juin - 18 juin
+								</h3>
+								<p>
+									Cette semaine j'ai entamé l'esquisse de l'algorithme en pseudocode.
+									Il est vite devenu plus complexe que je ne m'attendais. Je suis passé
+									par plusieurs idées d'architecture pour le réseau en tant que tel, chacune
+									plus complexe, mais plus juste que la dernière.
+								</p>
+								<p>
+									Au début, je voulais simplement essayer de placer les carreaux
+									de façon aléatoire et itérative. Le premier problème principale
+									est le fait qu'il y a 4 versions de chaque carreau: nord, sud,
+									est et ouest. Cette duplication rend la méthode de retour-arrière
+									beaucoup moins efficace. Le deuxième problème est que utiliser des carreaux prédifinis
+									et immuables entraîne beaucoup de cas où une solution possible serait
+									traitée comme impossible. Par exemple si nous voulions connecter
+									une route verticale avec une route horizontale, ce serait impossible
+									puisque le carrreau horizontal est prédéfini, tandis que nous aurions
+									pu tout simplement les connecter pour former une intersection.
+								</p>
+								<figure>
+									<img src="tiles.png" id="tiles" alt="tiles">
+									<figcaption>Les 6 carreaux de base de Duckietown</figcaption>
+								</figure>
+								<p>
+									Cela m'a fait remarquer qu'un graphe avec des noeuds et des arcs
+									serait utile pour représenter le réseau pendant sa construction.
+									Comme ça il y a un modèle dynamique qui peut être mis à jour
+									selon les <a href="http://book.duckietown.org/master/duckiebook/duckietown_specs.html#sec:duckietown-specs">
+									spécifications</a> de Duckietown au fur et à mesure, et qui à
+									la fin de la génération sera converti directement aux carreaux
+									correspondants.
+								</p>
+								<p>
+									Avec cette idée en tête je commençai l'écriture de la logique de
+									l'algorithme en pseudocode. La partie la plus intelectuellement
+									éxigeant fut la vérification de la validité des ajouts potentiels
+									d'arcs dans le graphe. Pour expliquer, les <b> 2 contraintes topologiques
+									de Duckietown </b> dictent ce qui est un réseau valide et ce qui ne l'est pas:
+								</p>
+								<ul>
+									<li>Une intersection ne peut pas être adjacente à un carreau
+										  de route courbée ou d'un autre carreau d'intersection
+									</li>
+									<li>
+										Deux carreaux adjacents et non-vides doivent avoir un chemin faisable
+										de longueur 2; s'ils sont adjacents, ils doivent être connectés.
+									</li>
+								</ul>
+								<p>
+									Ces 2 règles sont simples et intuitives pour des êtres humains
+									qui construisent des réseaux, mais elles ont des ramifications
+									bien plus complexes quand elles doivent être généralisées pour des
+									ajouts automatisés. Mon algorithme utilise une série de méthodes pour
+									la vérification d'ajout de route, et leurs diagrammes démontrent bien
+									le niveau de complexité entraîné:
+								</p>
+								<figure>
+									<img src="check_fxn_diagrams-v2_simplified.png" id="check-fxns" alt="check digarams">
+									<figcaption>Les fonctions de vérification</figcaption>
+								</figure>
+								<p>
+									Pour arriver à ces règles, je suis passé par beaucoup d'étapes intermédiaires,
+									où je croyais avoir décelé la bonne logique pour les foncitons vérificatrices,
+									mais finalement il y avait un cas extrême qui nécessitait la réécriture
+									totale de mon travail.
+								</p>
+								<p>
+									À la fin de la deuxième semaine,
+									je suis enfin je suis passé à l'implémentation de
+									mon pseudocode. Malheureusement, je me suis vite rendu
+									compte que ma logique avait des failles. Il restait
+									donc une ultime réécriture de la logique pour la semaine
+									d'après.
+
+								</p>
+							</div>
+
+		<!--=========================================================================-->
+
+		            <div class="post">
+		            <h3>
+		              22 mai - 5 juin
+		            </h3>
+		            <p>
+		              Le début de mon stage fut un peu chaotique puisque mon directeur,
+		              Liam Paull était en voyage de travail et puisque j'étais fraîchement
+		              revenu de vacances moi-même. Néanmoins, M. Paull m'a décrit ma
+		              première tâche à distance: j'aurais à concevoir un programme qui
+		              peut générer des réseaux routiers valides selon les contraintes de Duckietown.
+		            </p>
+		            <p>
+		              Pour ce faire, j'ai dû apprendre le fonctionnement de la génération des environnements
+		              dans la plateforme propriétaire de Duckietown.
+		              Mais, avant même de commencer cela, il fallait que je réussisse à
+		              faire rouler la plateforme sur mon ordinateur. Ces deux tâches préliminaires
+		              m'ont pris un couple de jours. Quand j'étais enfin prêt, j'ai pu entamer
+		              mon programme. Cette première semaine, j'ai résussi à faire la partie
+		              du programme qui exporte un fichier du bon format.
+		            </p>
+		            <p>
+		              La semaine d'après, M. Paull est revenu. Nous avons discuté les
+		              voies possibles pour l'implémentation de l'algorithme générateur
+		              de réseau. Après beaucoup de recherches sur les différents styles
+									de génération procédurale, allant des labyrintes 2D simples aux
+									villes sophistiquées venant de l'industrie de jeu vidéo contemporaine,
+									j'ai choisi de bâtir un algorithme de <a href="https://en.wikipedia.org/wiki/Backtracking">retour-arrière</a>.
+									J'ai appris sur ce genre d'algorithme dans mon cours d'Introduction
+									à l'algorithmique (IFT 2125).
+		            </p>
+								<p>
+									Ces algorithmes fonctionnent en prenant des décisions récursivement
+									jusqu'à ce qu'une solution soit trouvée ou pas. Si une solution
+									n'est pas trouvée, l'algorithme retourne en arrière jusqu'au dernier
+									état valide (là où il y a encore des décisions qui pourraient
+									mener à une solution).
+								</p>
+		          </div>
+
+<!--=========================================================================-->
+		        </div>
+			</main>
+
+      <footer>
+				<small>
+					<i>
+            Adam Sigal 2018
+
+  					<p id="jav-mod"></p>
+  					<p id="jq-mod"></p>
+  					<script>
+  						(function() {
+  							// Javascript On Ready
+  							document.querySelector("#jav-mod").innerHTML = "Dernière modification: " + document.lastModified;
+  						})();
+  					</script>
+          </i>
+				</small>
+			</footer>
+		</div>
+
+	</body>
+</html>
